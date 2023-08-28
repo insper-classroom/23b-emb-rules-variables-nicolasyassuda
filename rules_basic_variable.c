@@ -2,16 +2,17 @@
 
 // ..
 
-int a = 0; // var global
-int b = 0; // var global
 
-void foo(void) {
+
+void foo(int *a) {
     a = a + 1; // acessa variavel global
 }
 
 void main(void) {
+    int a = 0; // var local
+    int b = 0; // var local
     while (1) {
-        foo();
+        foo(&a);
         
         if (a > 5) {
             b = 1;
